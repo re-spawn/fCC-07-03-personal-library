@@ -1,7 +1,7 @@
 {
-	"name": "fcc-library",
+	"name": "fCC-07-03-personal-library",
 	"version": "1.0.0",
-	"description": "boilerplate",
+	"description": "freeCodeCamp (fCC) - Quality Assurance (07) - Quality Assurance Projects - Personal Library (03)",
 	"main": "server.js",
 	"scripts": {
 		"start": "node server.js"
@@ -13,16 +13,15 @@
 		"cors": "^2.8.1",
 		"dotenv": "^8.2.0",
 		"express": "^4.14.0",
-		"mocha": "^3.2.0",
-		"zombie": "^5.0.5"
+		"mocha": "^10.2.0",
+		"zombie": "^6.1.4"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/freeCodeCamp/boilerplate-project-library"
+		"url": "https://github.com/re-spawn/fCC-07-03-personal-library"
 	},
 	"keywords": [
 		"node",
-		"hyperdev",
 		"express"
 	],
 	"license": "MIT"
