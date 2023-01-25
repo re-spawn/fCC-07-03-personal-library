@@ -9,7 +9,14 @@
 const chaiHttp = require('chai-http');
 const chai = require('chai');
 const assert = chai.assert;
-const server = require('../server');
+
+// const server = require('../server');
+require('dotenv').config();
+if (process.env.HOST === 'repl') {
+  var server = 'https://fCC-07-03-personal-library.respawn709.repl.co';
+} else {
+  var server = require('../server');
+}
 
 chai.use(chaiHttp);
 
@@ -41,6 +48,19 @@ suite('Functional Tests', function() {
     suite('POST /api/books with title => create book object/expect book object', function() {
       
       test('Test POST /api/books with title', function(done) {
+        chai
+          .request(server)
+          .post('api/books')
+          .type('form')
+          .send({
+            title: 'My First Book (Ever)'
+          })
+          .end(function(err, res) {
+            if (err) {
+              console.error(err);
+            } else {
+            }
+          } 
         //done();
       });
       
