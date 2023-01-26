@@ -112,10 +112,10 @@ module.exports = function (app) {
           } else {
             let comments = value.comments;
             comments.push(comment);
-            Book.findByIdAndUpdate(bookid, {
+            Book.findByIdAndUpdate(bookid,{
               commentcount: value.commentcount + 1,
               comments: comments
-            }).then(
+            }, { returnDocument: 'after' }).then(
               function(value) {
                 res.json(value);
               },
@@ -142,7 +142,11 @@ module.exports = function (app) {
       }
       Book.deleteOne({ _id: bookid }).then(
         function(value) {
-          res.send('delete successful');
+          if (value.deletedCount == 1) {
+            res.send('delete successful');
+          } else {
+            res.send('no book exists');
+          }
         },
         function(error) {
           console.log("failed Book.deleteOne");
